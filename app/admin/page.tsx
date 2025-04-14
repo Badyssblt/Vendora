@@ -11,20 +11,17 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/
 import {Input} from "@/components/ui/input";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod/src";
+import {useBreadcrumbs} from "@/contexts/breadcrumbs-context";
 
 export default function Admin(){
 
-    const breadcrumbs: AdminBreadcrumbItem[] = [
-        {
-            label: "Accueil",
-            href: "/admin"
-        },
-        {
-            label: "Paramètres du site",
-            href: "/admin/settings"
-        }
-    ]
+    const { setBreadcrumbs } = useBreadcrumbs()
+    useEffect(() => {
+        setBreadcrumbs([
+            {label: "Accueil", href: "/admin"},
+            {label: "Paramètre du site", href: "/admin/settings"}
+        ])
+    }, []);
 
     const { settings, loading, error, getSettings } = useSettingsContext()
 
@@ -66,9 +63,7 @@ export default function Admin(){
     }, [settings]);
 
     if(loading) return <p>Chargement...</p>
-
-
-
+    if(!settings) return <p>Une erreur est survenue, aucun paramètre disponible</p>
 
     return (
 

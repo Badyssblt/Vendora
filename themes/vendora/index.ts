@@ -4,9 +4,9 @@ import Footer from './Footer'
 import Layout from './Layout'
 
 
-export const classicTheme: ThemeConfig = {
-    name: 'Classic',
-    label: "Thème Classique de Vendora",
+export const vendoraTheme: ThemeConfig = {
+    name: 'Vendora',
+    label: "Thème de Vendora",
     layout: 'classic',
     components: {
         header: Header,
@@ -23,17 +23,4 @@ export const classicTheme: ThemeConfig = {
     },
 }
 
-export const classicClasses = {
-    body: "text-white bg-black p-6",
-    header: {
-        menu: "flex gap-4 justify-between",
-        menuContent: "flex gap-6"
-    },
-    content: {
-
-    },
-    footer: {
-
-    }
-}
 

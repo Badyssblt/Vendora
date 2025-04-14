@@ -18,6 +18,7 @@ import {
 import {useSettings} from "@/hooks/useSettings";
 import {useContext} from "react";
 import {SettingsContext, useSettingsContext} from "@/contexts/settings-context";
+import Link from "next/link";
 
 
 const data = {
@@ -29,12 +30,12 @@ const data = {
       items: [
         {
           title: "Paramètres globaux",
-          url: "#",
+          url: "/admin",
           isActive: true
         },
         {
           title: "Thèmes",
-          url: "#",
+          url: "/admin/themes",
         },
       ],
     },
@@ -50,7 +51,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <h1 className="font-bold text-xl">{ settings.siteName }</h1>
+        <Link href="/"><h1 className="font-bold text-xl">{ settings.siteName }</h1></Link>
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>

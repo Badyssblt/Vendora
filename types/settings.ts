@@ -1,3 +1,4 @@
 export type SettingsType = {
-    siteName: string
+    siteName: string,
+    themeSelected: string
 }

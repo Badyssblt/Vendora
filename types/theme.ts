@@ -14,3 +14,10 @@ export type ThemeConfig = {
         font: string
     }
 }
+
+export type ThemeClasses = {
+    body: string,
+    header: Record<string, string>,
+    content: Record<string, string>,
+    footer: Record<string, string>
+}

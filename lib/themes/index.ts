@@ -1,6 +1,13 @@
 import {ThemeConfig} from "@/types/theme";
-import classicTheme from '@/themes/classic'
+import {classicClasses, classicTheme} from "@/themes/classic";
+import {vendoraTheme} from "@/themes/vendora";
+
 
 export const themes: Record<string, ThemeConfig> = {
-    classic: classicTheme
+    classic: classicTheme,
+    vendora: vendoraTheme
+}
+
+export const themesClasses = {
+    classic: classicClasses
 }

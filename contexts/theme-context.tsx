@@ -1,6 +1,8 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import { themes } from '@/lib/themes'
+import {useSettings} from "@/hooks/useSettings";
+import {SettingsType} from "@/types/settings";
 
 
 type ThemeContextType = {
@@ -24,9 +26,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         }
     }
 
-    const getTheme = (): string | null => {
-        if(typeof window !== 'undefined') {
-            return localStorage.getItem("theme")
+    const getTheme = async (): string | null => {
+        try {
+            const response = await fetch('/api/settings')
+            const data: SettingsType = await response.json()
+            return data.themeSelected
+        }catch (e: unknown) {
         }
     }
 

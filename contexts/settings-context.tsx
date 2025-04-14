@@ -1,20 +1,20 @@
 "use client"
 import React, {createContext, useContext, useEffect, useState} from "react";
+import {SettingsType} from "@/types/settings";
 
-export const SettingsContext = createContext(undefined);
+export const SettingsContext = createContext<SettingsContextType | undefined>(undefined);
 
-type SettingsType = {
-    key: string,
-    value: string
-}
+
 
 export type SettingsContextType = {
-    settings?: SettingsType[];
+    settings?: SettingsType;
     getSettings: () => Promise<void>;
+    loading: Boolean,
+    error: string | null
 };
 
 export const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
-    const [settings, setSettings] = useState<SettingsType[]>()
+    const [settings, setSettings] = useState<SettingsType>()
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState(null)
 
