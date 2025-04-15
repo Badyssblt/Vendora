@@ -37,6 +37,10 @@ const data = {
           title: "Thèmes",
           url: "/admin/themes",
         },
+        {
+          title: "Menu",
+          url: "/admin/menu",
+        },
       ],
     },
   ],

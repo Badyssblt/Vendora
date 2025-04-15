@@ -1,6 +1,8 @@
 'use client'
 import { useSettings } from "@/hooks/useSettings";
 import { useEffect, useState } from "react";
+import {MenuType} from "@/types/settings";
+import {useMenu} from "@/hooks/useMenu";
 
 export default function Page() {
     const { settings } = useSettings();
@@ -10,6 +12,8 @@ export default function Page() {
     const [ContentComponent, setContentComponent] = useState<any>(null);
     const [FooterComponent, setFooterComponent] = useState<any>(null);
     const [hasError, setHasError] = useState<boolean>(false)
+
+    const { menu } = useMenu()
 
     const loadHeader = async () => {
         try {
@@ -28,7 +32,6 @@ export default function Page() {
         }catch (e) {
             setHasError(true)
         }
-
     }
 
     const loadFooter = async () => {
@@ -55,7 +58,7 @@ export default function Page() {
 
     return (
         <div>
-            {HeaderComponent && <HeaderComponent />}
+            {HeaderComponent && <HeaderComponent menu={menu}/>}
             {ContentComponent && <ContentComponent/>}
             {FooterComponent && <FooterComponent/>}
         </div>

@@ -18,7 +18,6 @@ export default function AdminTheme(){
     return (
         <div>
             <ThemeSwitcher/>
-
         </div>
     )
 }
