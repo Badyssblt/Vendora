@@ -41,6 +41,14 @@ const data = {
           title: "Menu",
           url: "/admin/menu",
         },
+        {
+          title: "Produits",
+          url: "/admin/products",
+        },
+        {
+          title: "Pages",
+          url: "/admin/pages",
+        },
       ],
     },
   ],

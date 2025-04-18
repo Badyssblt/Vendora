@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {MenuType, SettingsType} from "@/types/settings";
 
 
-export const useMenu = () => {
+export const usePage = () => {
     const [menu, setMenu] = useState<MenuType>()
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null);

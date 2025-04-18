@@ -12,9 +12,11 @@ import {Input} from "@/components/ui/input";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {useBreadcrumbs} from "@/contexts/breadcrumbs-context";
+import {useSession} from "next-auth/react";
 
 export default function Admin(){
 
+    const { data: session } = useSession()
     const { setBreadcrumbs } = useBreadcrumbs()
     useEffect(() => {
         setBreadcrumbs([

@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "Product" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "description" TEXT,
+    "price" REAL NOT NULL,
+    "inventory" INTEGER NOT NULL DEFAULT 0,
+    "imageUrl" TEXT,
+    "category" TEXT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
